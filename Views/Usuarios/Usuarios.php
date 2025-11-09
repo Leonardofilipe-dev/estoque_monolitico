@@ -25,6 +25,7 @@
             max-width: 700px;
             margin: 40px auto;
             padding: 20px;
+            
         }
 
         .card {
@@ -34,6 +35,7 @@
             margin-bottom: 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: 0.3s;
+            
         }
 
         .card:hover {
@@ -45,6 +47,7 @@
             margin: 8px 0;
             font-size: 16px;
             color: #444;
+            display: inline-block;
         }
 
         .info strong {
