@@ -10,12 +10,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['act']) && $_GET['act'] 
     $nome_usuario = isset($_POST['nome_usuario']) ? trim($_POST['nome_usuario']) : '';
     $email = isset($_POST['email']) ? trim($_POST['email']) : '';
     $senha = isset($_POST['senha']) ? $_POST['senha'] : '';
+    
 
     if (empty($nome_usuario) || empty($email) || empty($senha)) {
         $mensagem = "<p style='color: red;'>Por favor, preencha todos os campos!</p>";
     } else {
         try {
-            $stmt = $conexao->prepare("INSERT INTO usuario (nome_usuario, email, senha) VALUES (?, ?, ?)");
+            $stmt = isset($conexao) ? $conexao->prepare("INSERT INTO usuario (nome_usuario, email, senha) VALUES (?, ?, ?)") : null;
             $stmt->bindParam(1, $nome_usuario);
             $stmt->bindParam(2, $email);
             $stmt->bindParam(3, $senha);
