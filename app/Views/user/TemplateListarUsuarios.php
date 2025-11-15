@@ -1,22 +1,8 @@
 <?php 
 require_once __DIR__ . '/../../../Config/Config.php';
-require_once __DIR__ . '/../../Models/Usuario.php';
+require_once __DIR__ . '/../../Controllers/userController/UsuarioController.php';
+require_once __DIR__ . '/../../Controllers/userController/UsuarioController.php';
 
-// Processa exclusão de usuário
-$mensagem = '';
-if (isset($_GET['delete'])) {
-    $usuario = new Usuario($GLOBALS['conexao'] ?? null);
-    $usuario->id = $_GET['delete'];
-    
-    if ($usuario->deletar()) {
-        $mensagem = $usuario->getMensagem();
-    } else {
-        $mensagem = $usuario->getMensagem();
-    }
-}
-
-// Busca todos os usuários
-$usuarios = Usuario::buscarTodos($GLOBALS['conexao'] ?? null);
 ?>
 
 <!DOCTYPE html>
