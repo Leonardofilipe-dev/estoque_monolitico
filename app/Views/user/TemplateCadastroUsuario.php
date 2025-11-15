@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__ . "/../../../Config/Config.php";
-require_once __DIR__ . "/../../Models/Usuario.php";
+require_once __DIR__ . "/../../Controllers/userController/UsuarioController.php";
 
 // Inicializa variáveis usadas no template
 $mensagem = '';
@@ -9,25 +9,7 @@ $nome_usuario = '';
 $email = '';
 $senha = '';
 
-// Processa envio do formulário (salvar usuário)
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_GET['act']) && $_GET['act'] === 'save') {
-    $usuario = new Usuario($GLOBALS['conexao'] ?? null);
-    $usuario->nome_usuario = trim($_POST['nome_usuario'] ?? '');
-    $usuario->email = trim($_POST['email'] ?? '');
-    $usuario->senha = $_POST['senha'] ?? '';
 
-    if ($usuario->salvar()) {
-        $mensagem = $usuario->getMensagem();
-        // Limpar campos após sucesso
-        $nome_usuario = '';
-        $email = '';
-        $senha = '';
-    } else {
-        $mensagem = $usuario->getMensagem();
-        $nome_usuario = $_POST['nome_usuario'] ?? '';
-        $email = $_POST['email'] ?? '';
-    }
-}
 ?>
 
 <!DOCTYPE html>
