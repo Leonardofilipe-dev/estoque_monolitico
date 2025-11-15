@@ -85,7 +85,7 @@ $senha = '';
         </form>
         
         <!-- Link para listar usuários -->
-        <strong><a href="/app/Views/user/TemplateListarUsuarios.php">Verificar todos os usuários cadastrados</a></strong>
+        <strong><a href="TemplateListarUsuarios.php">Verificar todos os usuários cadastrados</a></strong>
     </body>
 </html>
 

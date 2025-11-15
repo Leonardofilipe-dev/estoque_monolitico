@@ -1,7 +1,6 @@
 <?php 
 require_once __DIR__ . '/../../../Config/Config.php';
 require_once __DIR__ . '/../../Controllers/userController/UsuarioController.php';
-require_once __DIR__ . '/../../Controllers/userController/UsuarioController.php';
 
 ?>
 
@@ -12,7 +11,7 @@ require_once __DIR__ . '/../../Controllers/userController/UsuarioController.php'
     <meta charset="UTF-8">
     <title>Lista de Usuários</title>
 
-    <a href="/index.php">Voltar a página de cadastro</a>
+    <a href="TemplateCadastroUsuario.php">Voltar a página de cadastro</a>
 
     <style>
         body {
