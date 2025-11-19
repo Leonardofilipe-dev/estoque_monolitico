@@ -1,0 +1,14 @@
+{
+    "name": "leo/projeto_monolitico_estoque",
+    "autoload": {
+        "psr-4": {
+            "Leo\\ProjetoMonoliticoEstoque\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "leonardo"
+        }
+    ],
+    "require": {}
+}
