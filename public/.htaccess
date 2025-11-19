@@ -1,0 +1,22 @@
+# Enable rewriting
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # If your project is not in the webserver root, set RewriteBase accordingly
+    # Example when project is in htdocs/projeto_monolitico_estoque/public:
+    # RewriteBase /projeto_monolitico_estoque/public/
+    # If project is in DocumentRoot directly, use: RewriteBase /
+
+    # Uncomment and edit the line below if needed
+    # RewriteBase /projeto_monolitico_estoque/public/
+
+    # Serve existing files and directories directly
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Otherwise redirect to index.php, preserving query string
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+# If mod_rewrite is not available, fallback: do nothing
